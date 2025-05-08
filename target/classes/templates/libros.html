@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/plantillagrupo5}">
+<head>
+    <title>Titulo libros</title>
+</head>
+
+<body>
+<div layout:fragment="cabecera">
+    <h2>Esta es la lista de libros</h2>
+</div>
+<div layout:fragment="contenido" >
+    <div class="table-responsive">
+        <table id="tableitm" class="table table-sm table-bordered bg-light text-bg-dark rounded-start">
+            <thead >
+            <th>autor</th>
+            <th>titulo</th>
+            </thead>
+            <tbody>
+            <tr th:each="elemento , posicion : ${lista}">
+                <th th:text="${elemento.author}"></th>
+                <th th:text="${elemento.title}"></th>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
