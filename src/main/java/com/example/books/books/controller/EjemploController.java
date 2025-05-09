@@ -53,4 +53,9 @@ public class EjemploController {
     public String vistalogout( ){
         return "logout";
     }
+
+    @GetMapping("/home")
+    public String mostrarInicio( ){
+        return "home";
+    }
 }
