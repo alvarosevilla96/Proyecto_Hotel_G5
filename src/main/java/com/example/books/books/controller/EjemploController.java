@@ -10,6 +10,13 @@ public class EjemploController {
     public String vistaHome( ModelMap interfazConPantalla){
         return "index";
     }
+
+    @GetMapping("/reserva")
+    public String reserva( ){
+        return "reservaCompleta";
+    }
+
+
     @GetMapping("/prueba")
     public String vistaprueba( ){
         return "prueba_inicial";
@@ -58,4 +65,5 @@ public class EjemploController {
     public String mostrarInicio( ){
         return "home";
     }
+
 }
