@@ -226,6 +226,11 @@ header {
 .modal-header .modal-title {
   color: #E0E0E0;
 }
+.modal-body{
+  background-color: #FFFFFF;
+  color: black;
+
+}
 
 /* Tipografías */
 h3, h4 {
