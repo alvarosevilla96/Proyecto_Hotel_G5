@@ -66,4 +66,9 @@ public class EjemploController {
         return "home";
     }
 
+    @GetMapping("/login2")
+    public String msotrarLogin( ){
+        return "login2";
+    }
+
 }
