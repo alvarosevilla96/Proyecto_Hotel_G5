@@ -76,4 +76,9 @@ public class EjemploController {
         return "crear_cuenta";
     }
 
+    @GetMapping("/hoteles")
+    public String mostrarHoteles( ){
+        return "hoteles_web";
+    }
+
 }
