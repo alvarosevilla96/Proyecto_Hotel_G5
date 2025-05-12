@@ -71,4 +71,9 @@ public class EjemploController {
         return "login2";
     }
 
+    @GetMapping("/crear-cuenta")
+    public String mostrarCrearCuenta( ){
+        return "crear_cuenta";
+    }
+
 }
