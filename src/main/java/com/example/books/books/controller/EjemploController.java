@@ -77,8 +77,9 @@ public class EjemploController {
     }
 
     @GetMapping("/userhome")
-    public String mostrarUserHome( ){
+    public String mostrarUserHome( ) {
         return "user_home_page";
+    }
 
     @GetMapping("/hoteles")
     public String mostrarHoteles( ){
