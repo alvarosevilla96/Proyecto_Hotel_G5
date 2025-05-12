@@ -232,6 +232,20 @@ header {
 
 }
 
+#disponibilidadModal label {
+  color: white;
+}
+
+#disponibilidadModal .btn-close {
+  filter: invert(1);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 /* Tipografías */
 h3, h4 {
   color: #E0E0E0;

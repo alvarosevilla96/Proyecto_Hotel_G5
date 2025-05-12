@@ -76,4 +76,9 @@ public class EjemploController {
         return "crear_cuenta";
     }
 
+    @GetMapping("/userhome")
+    public String mostrarUserHome( ){
+        return "user_home_page";
+    }
+
 }
