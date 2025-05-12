@@ -85,5 +85,8 @@ public class EjemploController {
     public String mostrarHoteles( ){
         return "hoteles_web";
     }
-
+    @GetMapping("/contact")
+    public String mostrarPaginaContact( ) {
+        return "contact";
+    }
 }
