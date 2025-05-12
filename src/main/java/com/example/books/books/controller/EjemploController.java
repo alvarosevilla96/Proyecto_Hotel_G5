@@ -66,4 +66,10 @@ public class EjemploController {
         return "home";
     }
 
+    @GetMapping("/hoteles")
+    public String verHoteles( ){
+        return "hoteles_web";
+    }
+
+
 }
