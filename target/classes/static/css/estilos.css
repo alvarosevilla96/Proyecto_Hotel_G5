@@ -232,10 +232,6 @@ header {
 
 }
 
-#disponibilidadModal label {
-  color: white;
-}
-
 #disponibilidadModal .btn-close {
   filter: invert(1);
 }
