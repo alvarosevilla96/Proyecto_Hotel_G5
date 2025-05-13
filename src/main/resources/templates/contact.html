@@ -3,26 +3,32 @@
       layout:decorate="~{/layout/plantilla}">
 <head>
 
-  <title>contact</title>
+  <title>>Contacto - Hotel Gominola</title>
   <link th:href="@{/css/contact.css}" rel="stylesheet" />
 
 </head>
 
 <body class="bg-gradient-primary">
 <main layout:fragment="contenido">
-  <section id="contact-form" class="contact-form-section">
+  <section id="contact-form" class="contact-form-section" tabindex="0">
     <div class="container">
       <h1 class="mb-4">Contáctanos</h1>
       <p class="lead text-center">
         Estamos aquí para ayudarte.<br>
         Completa el formulario para enviarnos tu consulta.
       </p>
+      <p id="instrucciones-formulario" class="text-muted text-center">
+        Todos los campos marcados con * son obligatorios.
+      </p>
       <!-- ----------------------------------------Formulario de Contacto---------------------------------------------------------------------------------->
       <div id="formulario-contacto" class="row justify-content-center">
         <div class="col-lg-10">
           <h2 class="mb-4 text-center">Envíanos un mensaje</h2>
-          <form class="contact-form" action="enviar.php" method="post" enctype="multipart/form-data" novalidate>
-            <div class="row mb-4">
+
+              <!--con role y aria-describedby-->
+          <form class="contact-form" role="form" aria-describedby="instrucciones-formulario"
+                action="enviar.php" method="post" enctype="multipart/form-data" novalidate>
+          <div class="row mb-4">
               <div class="col-md-6 mb-3 mb-md-0">
                 <label for="nombre" class="form-label">Nombre *</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -51,8 +57,11 @@
 
             <div class="mb-4">
               <label for="adjuntar" class="form-label">Adjuntar fotos (opcional)</label>
-              <input class="form-control" type="file" id="adjuntar" name="adjuntar[]" accept="image/*" multiple aria-describedby="ayuda-adjuntar">
-              <div id="ayuda-adjuntar" class="form-text">Puedes subir una o varias imágenes en formato JPG, PNG o similar.</div>
+              <input class="form-control" type="file" id="adjuntar" name="adjuntar[]"
+                     accept="image/*" multiple aria-describedby="ayuda-adjuntar">
+              <div id="ayuda-adjuntar" class="form-text">
+                Puedes subir una o varias imágenes en formato JPG, PNG o similar.
+              </div>
             </div>
 
             <div class="mb-4">
@@ -61,7 +70,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn">Enviar</button>
+              <button type="submit" class="btn" aria-label="Enviar formulario de contacto">Enviar</button>
             </div>
           </form>
         </div>
@@ -70,19 +79,21 @@
   </section>
 
   <!-- ----------------------------------------Datos de Contacto---------------------------------------------------------------------------------->
-  <section id="contact-info" class="contact-info-section bg-light py-5">
+  <section id="contact-info" class="contact-info-section bg-light py-5" tabindex="0">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <h2 class="mb-4 text-center">Información de contacto</h2>
-          <p><i class="fa-solid fa-location-dot"></i> Av. de la Piruleta, Ciudad Gominola, País Feliz</p>
-          <p><i class="fa-solid fa-phone"></i> +123 456 7890</p>
-          <p><i class="fa-solid fa-envelope"></i> contacto@hotel.com</p>
-          <p><i class="fa-solid fa-clock"></i> Lunes a Domingo: 8:00 - 20:00</p>
+
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. de la Piruleta, Ciudad Gominola, País Feliz</p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> +123 456 7890</p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> contacto@hotel.com</p>
+          <p><i class="fa-solid fa-clock" aria-hidden="true"></i> Lunes a Domingo: 8:00 - 20:00</p>
         </div>
       </div>
     </div>
   </section>
 </main>
+
 </body>
 </html>
