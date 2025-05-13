@@ -17,6 +17,8 @@
     <link th:href="@{/css/estilos.css}" rel="stylesheet" />
     <link th:href="@{/css/Burbujas.css}" rel="stylesheet" />
 </head>
+<script th:src="@{/js/scrollButon.js}"></script>
+
 <body>
 
 <!-- NAVBAR -->
@@ -34,11 +36,11 @@
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column align-items-start">
-                <a class="nav-link fs-4 mb-2" th:href="@{/login}">Acceso</a>
-                <a class="nav-link fs-4 mb-2" th:href="@{/reservaCompleta}">Reserva</a>
-                <a class="nav-link fs-4 mb-2" href="#">Hoteles</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/login2}">Acceso</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/reserva}">Reserva</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/hoteles}">Hoteles</a>
                 <a class="nav-link fs-4 mb-2" href="#">Servicios</a>
-                <a class="nav-link fs-4 mb-2" href="#">Contacto</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/contact}">Contacto</a>
             </div>
         </div>
     </div>
@@ -87,26 +89,5 @@
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    // JavaScript para mostrar/ocultar el botón y manejar el desplazamiento
-    const scrollTopBtn = document.getElementById('scroll-top-btn');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Mostrar el botón después de desplazarse 300px
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Desplazamiento suave
-        });
-    });
-</script>
-
 </body>
 </html>
