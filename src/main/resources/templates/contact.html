@@ -10,9 +10,9 @@
 
 <body class="bg-gradient-primary">
 <main layout:fragment="contenido">
-  <section id="contact-form" class="contact-form-section" tabindex="0">
+  <section id="contact-form" class="contact-form-section" tabindex="0" aria-labelledby="contactanos">
     <div class="container">
-      <h1 class="mb-4 text-center">Contáctanos</h1>
+      <h1 class="mb-4 text-center" id="contactanos">Contáctanos</h1>
       <p class="lead text-center">
         Estamos aquí para ayudarte.<br>
         Completa el formulario para enviarnos tu consulta.
@@ -22,13 +22,12 @@
       <div id="formulario-contacto" class="row justify-content-center">
         <div class="col-lg-10">
           <h2 class="mb-4 text-center">Envíanos un mensaje</h2>
-          <p id="instrucciones-formulario" class="text-muted text-center">
-            Todos los campos marcados con * son obligatorios.
-          </p>
               <!--con role y aria-describedby-->
           <form class="contact-form" role="form" aria-describedby="instrucciones-formulario"
                 action="enviar.php" method="post" enctype="multipart/form-data">
-
+            <p id="instrucciones-formulario" class="text-muted text-center">
+              Todos los campos marcados con * son obligatorios.
+            </p>
             <div class="row mb-4">
               <div class="col-md-6 mb-3 mb-md-0">
                 <label for="nombre" class="form-label">Nombre *</label>
@@ -83,11 +82,11 @@
   </section>
 
   <!-- ----------------------------------------Datos de Contacto---------------------------------------------------------------------------------->
-  <section id="contact-info" class="contact-info-section py-5" tabindex="0">
+  <section id="contact-info" class="contact-info-section py-5" tabindex="0" aria-labelledby="titulo-contacto">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <h2 class="mb-4 text-center">Información de contacto</h2>
+          <h2 id="titulo-contacto" class="mb-4 text-center">Información de contacto</h2>
 
           <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. de la Piruleta, Ciudad Gominola, País Feliz</p>
           <p><i class="fa-solid fa-phone" aria-hidden="true"></i> +123 456 7890</p>
