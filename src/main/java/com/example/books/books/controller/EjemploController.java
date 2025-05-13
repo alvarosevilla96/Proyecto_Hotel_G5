@@ -16,6 +16,11 @@ public class EjemploController {
         return "reservaCompleta";
     }
 
+    @GetMapping("/reservaRapida")
+    public String reservaRapida( ){
+        return "reservaRapida";
+    }
+
 
     @GetMapping("/prueba")
     public String vistaprueba( ){
