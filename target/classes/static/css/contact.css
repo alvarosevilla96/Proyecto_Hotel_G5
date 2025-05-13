@@ -160,7 +160,8 @@ header {
     }
 }
 .contact-info i {
+        color: #00BFFF !important;     /* Color del icono */
+        fill: #00BFFF !important;
     font-size: 1.5rem;  /* Tamaño del icono */
-    color: #00BFFF;     /* Color del icono */
     margin-right: 10px;  /* Espaciado entre el ícono y el texto */
 }
