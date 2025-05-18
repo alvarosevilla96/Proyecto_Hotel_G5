@@ -8,7 +8,5 @@ import lombok.Setter;
 public class InfoContacto {
     private String nombre;
     private String email;
-
-
-
+    private String phoneNumber;
 }
