@@ -24,9 +24,9 @@ public class HotelesController {
         return "services";
     }
 
-    @GetMapping("/login2")
+    @GetMapping("/login")
     public String msotrarLogin( ){
-        return "login2";
+        return "login";
     }
 
     @GetMapping("/crear-cuenta")
