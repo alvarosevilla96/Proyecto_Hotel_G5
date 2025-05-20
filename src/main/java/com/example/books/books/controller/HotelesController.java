@@ -19,6 +19,11 @@ public class HotelesController {
         return "reservaCompleta";
     }
 
+    @GetMapping("/reservaRapida")
+    public String reservaRapida( ){
+        return "reservaRapida";
+    }
+
     @GetMapping("/servicios")
     public String vistaservicios( ){
         return "services";
