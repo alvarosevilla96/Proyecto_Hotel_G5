@@ -41,38 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    // ===== Validación de Correos Electrónicos =====
-    const btnAceptar = document.getElementById("btnAceptar");
-    if (btnAceptar) {
-        btnAceptar.addEventListener("click", function () {
-            const email1 = document.getElementById("email1");
-            const email2 = document.getElementById("email2");
-            const mensaje = document.getElementById("mensajeConfirmacion");
 
-            mensaje.classList.add("d-none");
 
-            const correo1 = email1.value.trim();
-            const correo2 = email2.value.trim();
-
-            if (!correo1 || !correo2) {
-                alert("Por favor, completa ambos campos.");
-                return;
-            }
-
-            if (correo1 !== correo2) {
-                alert("Los correos electrónicos no coinciden.");
-                return;
-            }
-
-            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailValido.test(correo1)) {
-                alert("Introduce un correo electrónico válido.");
-                return;
-            }
-
-            mensaje.classList.remove("d-none");
-        });
-    }
     // ===== Validación de Login Simulado =====
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {

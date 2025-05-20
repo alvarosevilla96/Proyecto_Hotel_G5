@@ -42,7 +42,7 @@
 
             <div class="mb-4">
               <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono"
+              <input type="tel" class="form-control" id="telefono" name="telefono" th:field="${datoscontacto.phoneNumber}"
                      placeholder="Ej. 654321987" pattern="[0-9]{7,15}" inputmode="numeric"
                      aria-label="Número de teléfono. Ejemplo: 654321987">
 

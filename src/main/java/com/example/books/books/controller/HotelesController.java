@@ -1,7 +1,9 @@
 package com.example.books.books.controller;
 
 import com.example.books.books.dto.InfoContacto;
+import com.example.books.books.dto.LoginDto;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,8 +27,17 @@ public class HotelesController {
     }
 
     @GetMapping("/login")
-    public String msotrarLogin( ){
+    public String mostrarLogin(Model model){
+        LoginDto loginDto = new LoginDto();
+        loginDto.setEmail("test@ejemplo.com");
+        model.addAttribute("datoslogin", loginDto);
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String postLogin(@ModelAttribute(name="datoslogin") LoginDto login){
+        System.out.println(login.getEmail());
+        return "user_home_page";
     }
 
     @GetMapping("/crear-cuenta")
