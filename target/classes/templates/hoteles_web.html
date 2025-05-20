@@ -103,39 +103,36 @@
                 <div th:each="hotel : ${hotels}">
                     <div class="modal fade"
                          th:id="'hotelModal__' + ${hotel.name.hashCode()}"
-                    tabindex="-1"
-                    th:attr="aria-labelledby='hotelModalLabel__' + ${hotel.name.hashCode()}"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content bg-dark text-white">
-                            <div class="modal-header border-0">
-                                <h5 class="modal-title"
-                                    th:id="'hotelModalLabel__' + ${hotel.name.hashCode()}"
-                                    th:text="${hotel.name}">Nombre Hotel</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img class="img-fluid mb-3"
-                                     th:src="${hotel.imgUrl}"
-                                     th:alt="${hotel.name}">
-
-                                <p th:text="${hotel.bigDescription}">Descripción larga del hotel</p>
-
-                                <ul>
-                                    <li th:each="service : ${hotel.services}" th:text="${service}">Servicio</li>
-                                </ul>
-
-                                <p><strong th:text="'Desde ' + ${hotel.price} + '€ por noche'">Precio</strong></p>
-                            </div>
-                            <div class="modal-footer border-0">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Reservar</button>
+                         tabindex="-1"
+                         th:attr="aria-labelledby='hotelModalLabel__' + ${hotel.name.hashCode()}"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content bg-dark text-white">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title"
+                                        th:id="'hotelModalLabel__' + ${hotel.name.hashCode()}"
+                                        th:text="${hotel.name}">Nombre Hotel</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-fluid mb-3"
+                                         th:src="${hotel.imgUrl}"
+                                         th:alt="${hotel.name}">
+                                    <p th:text="${hotel.bigDescription}">Descripción larga del hotel</p>
+                                    <ul>
+                                        <li th:each="service : ${hotel.services}" th:text="${service}">Servicio</li>
+                                    </ul>
+                                    <p><strong th:text="'Desde ' + ${hotel.price} + '€ por noche'">Precio</strong></p>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Reservar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
+                </div>
         </section>
 
 
@@ -143,7 +140,7 @@
         <section class="py-5">
             <div class="container text-center">
                 <h2>Ubicaciones de nuestros Hoteles</h2>
-                <div id="locationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div id="locationCarousel" th:each="hotel : ${hotels}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>

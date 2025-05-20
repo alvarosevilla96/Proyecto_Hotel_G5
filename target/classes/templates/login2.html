@@ -16,7 +16,7 @@
         <div class="col-md-6 d-flex align-items-center justify-content-center">
             <div class="w-75 ">
                 <h2 class="mb-4 mt-4 text-center">INICIO DE SESIÓN</h2>
-                <form id="loginForm">
+                <form id="loginForm" th:action="@{/login2}" method="post">
                     <div class="mb-3">
                         <label for="loginEmail" class="form-label">CORREO ELECTRÓNICO</label>
                         <input type="email" class="form-control border-dark" id="loginEmail" placeholder="nombre@ejemplo.com"required>
