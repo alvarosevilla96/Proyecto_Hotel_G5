@@ -37,7 +37,7 @@
                 <div class="card shadow">
                     <div class="card-body p-5">
                         <h2 class="card-title h3 mb-4">Reserva tu estancia</h2>
-                        <form th:action="@{/reservas/buscar}" method="POST" class="row g-2">
+                        <form th:action="@{/reserva}" th:object="${datosreserva}" method="POST" class="row g-2">
                             <div class="col-md-3">
                                 <label for="checkin" class="form-label">Fecha de entrada</label>
                                 <input type="date" id="checkin" name="checkin" class="form-control" min="2025-04-28" required>

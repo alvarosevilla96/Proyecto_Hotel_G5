@@ -2,6 +2,7 @@ package com.example.books.books.controller;
 
 import com.example.books.books.dto.InfoContacto;
 import com.example.books.books.dto.LoginDto;
+import com.example.books.books.dto.ReservaDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,11 +15,6 @@ public class HotelesController {
     @GetMapping("/")
     public String vistaHome( ModelMap interfazConPantalla){
         return "home";
-    }
-
-    @GetMapping("/reserva")
-    public String reserva( ){
-        return "reservaCompleta";
     }
 
     @GetMapping("/reservaRapida")
@@ -74,4 +70,21 @@ public class HotelesController {
 
         return "home";
     }
+
+    @GetMapping("/reserva")
+    public String reserva( ModelMap ModelReserva) {
+        ReservaDto reserva= new ReservaDto();
+        reserva.setAdultos(4);
+        ModelReserva.addAttribute("datosreserva", reserva);
+        return "reservaCompleta";
+    }
+
+    @PostMapping("/reserva")
+    public String postReserva(@ModelAttribute(name="datosreserva") ReservaDto reserva) {
+        System.out.println(reserva.getAdultos());
+        System.out.println(reserva.getFechaEntrada());
+        System.out.println(reserva.getFechaSalida());
+        return "home";
+    }
+
 }
