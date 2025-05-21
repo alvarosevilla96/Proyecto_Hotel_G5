@@ -5,8 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class InfoContacto {
-    private String nombre;
+public class LoginDto {
     private String email;
-    private String phoneNumber;
+    private String password;
 }
