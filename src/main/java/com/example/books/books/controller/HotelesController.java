@@ -1,7 +1,5 @@
 package com.example.books.books.controller;
 
-import com.example.books.books.dto.HotelDto;
-import com.example.books.books.dto.HotelsData;
 import com.example.books.books.dto.InfoContacto;
 import com.example.books.books.dto.LoginDto;
 import org.springframework.stereotype.Controller;
@@ -10,9 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class HotelesController {
@@ -31,24 +26,18 @@ public class HotelesController {
         return "services";
     }
 
-    @GetMapping("/login2")
-    public String msotrarLogin(Model model ){
-
-        LoginDto login = new LoginDto();
-        login.setEmail("<EMAIL>");
-        login.setPassword("<PASSWORD>");
-
-        model.addAttribute("email", login.getEmail());
-        model.addAttribute("pass", login.getPassword());
-
-        return "login2";
+    @GetMapping("/login")
+    public String mostrarLogin(Model model){
+        LoginDto loginDto = new LoginDto();
+        loginDto.setEmail("test@ejemplo.com");
+        model.addAttribute("datoslogin", loginDto);
+        return "login";
     }
 
-    @PostMapping("/login2")
-    public String postMostrarLogin(@ModelAttribute(name="datosLogin") LoginDto login ){
+    @PostMapping("/login")
+    public String postLogin(@ModelAttribute(name="datoslogin") LoginDto login){
         System.out.println(login.getEmail());
-        System.out.println(login.getPassword());
-        return "home";
+        return "user_home_page";
     }
 
     @GetMapping("/crear-cuenta")
@@ -62,10 +51,7 @@ public class HotelesController {
     }
 
     @GetMapping("/hoteles")
-    public String mostrarHoteles(Model model){
-        List<HotelDto> hotels = HotelsData.hotelsDataList();
-        model.addAttribute("hotels", hotels);
-
+    public String mostrarHoteles( ){
         return "hoteles_web";
     }
 
@@ -73,16 +59,14 @@ public class HotelesController {
     public String mostrarPaginaContact(ModelMap intefrazConPantalla) {
         InfoContacto contacto = new InfoContacto();
         contacto.setNombre("El lobo feroz");
-        contacto.setPhoneNumber("0000000000");
         intefrazConPantalla.addAttribute("datoscontacto", contacto);
-        intefrazConPantalla.addAttribute("phoneNumber", contacto.getPhoneNumber());
         return "contact";
     }
 
     @PostMapping("/contact")
     public String postMostrarPaginaContact(@ModelAttribute(name="datoscontacto") InfoContacto infoContacto) {
         System.out.println(infoContacto.getNombre());
-        System.out.println(infoContacto.getPhoneNumber());
+
         return "home";
     }
 }
