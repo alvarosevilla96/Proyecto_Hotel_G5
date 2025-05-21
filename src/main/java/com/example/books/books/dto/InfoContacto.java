@@ -9,4 +9,5 @@ public class InfoContacto {
     private String nombre;
     private String email;
     private String phoneNumber;
+    private String mensaje;
 }

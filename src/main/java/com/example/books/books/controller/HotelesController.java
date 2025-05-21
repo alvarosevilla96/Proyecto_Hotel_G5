@@ -66,7 +66,9 @@ public class HotelesController {
     @PostMapping("/contact")
     public String postMostrarPaginaContact(@ModelAttribute(name="datoscontacto") InfoContacto infoContacto) {
         System.out.println(infoContacto.getNombre());
-
+        System.out.println(infoContacto.getMensaje());
         return "home";
     }
+
+
 }
