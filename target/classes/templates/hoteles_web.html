@@ -1,281 +1,154 @@
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{/layout/plantilla}" lang="es">
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hoteles Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Aura - Servicios Exclusivos</title>
 
-    <link th:href="@{/css/carousel_custom.css}" rel="stylesheet" />
-    <link th:href="@{/css/hoteles_cards.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/servicios_custom.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/estilos_v2.css}" rel="stylesheet" />
 </head>
-
-<body class="bg-gradient-primary">
-<main layout:fragment="contenido">
-        <!-- Aquí va el contenido específico de cada página -->
-
-        <!-- Carrusel Inicial -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<body>
+<nav class="navbar border-bottom rounded" style="background-color: #E0E0E0;">
+    <div class="container-fluid justify-content-between">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/assets/img/logo.png}" alt="Logo Zen Aura" style="height: 50px;">
+        </a>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span> MENÚ
+        </button>
+        <div class="offcanvas offcanvas-start offcanvas-fullscreen" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/1200/500?random=1" class="d-block w-100" alt="Imagen 1">
-                    <div class="carousel-center-caption">
-                        <h2>Hotel 1</h2>
-                        <p>Tu experiencia inolvidable comienza aquí.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/1200/500?random=2" class="d-block w-100" alt="Imagen 2">
-                    <div class="carousel-center-caption">
-                        <h2>Hotel 2</h2>
-                        <p>Relájate, desconecta y disfruta.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/1200/500?random=3" class="d-block w-100" alt="Imagen 3">
-                    <div class="carousel-center-caption">
-                        <h2>Hotel 3</h2>
-                        <p>Un paraíso hecho a tu medida.</p>
-                    </div>
-                </div>
+            <div class="offcanvas-body d-flex flex-column align-items-start">
+                <a class="nav-link fs-4 mb-2" th:href="@{/acceso}">Acceso</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/reservas}">Reservar</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/habitaciones}">Hoteles</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/servicios}">Servicios</a>
+                <a class="nav-link fs-4 mb-2" th:href="@{/contacto}">Contacto</a>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
         </div>
+    </div>
+</nav>
 
-        <!-- Contenido principal -->
-        <section class="py-5 text-center">
-            <div class="container">
-                <h1 class="display-4">Hoteles placeholder</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.</p>
+<main id="contenido-principal">
+    <section class="section" id="intro-services" aria-labelledby="services-heading">
+        <h1 id="services-heading">Descubre nuestros servicios exclusivos</h1>
+        <p>En Zen Aura, tu confort y bienestar son nuestra prioridad. Disfruta de una experiencia completa con nuestra variada oferta de servicios, desde una exquisita gastronomía hasta opciones de relax y conveniencia.</p>
+    </section>
+
+    <section id="carousel-section" role="region" aria-label="Galería de servicios destacados">
+        <div class="carousel" id="main-carousel">
+            <div class="carousel-images" id="carousel-images">
+                <img th:src="@{/assets/img/restaurante.jpg}" alt="Nuestro restaurante ofrece gastronomía de alta calidad." loading="lazy" id="carousel-img-1" />
+                <img th:src="@{/assets/img/transfer.jpg}" alt="Servicio de transfer al aeropuerto para tu comodidad." loading="lazy" id="carousel-img-2" />
+                <img th:src="@{/assets/img/piscina.jpg}" alt="Piscina interior climatizada del hotel." loading="lazy" id="carousel-img-3" />
+                <img th:src="@{/assets/img/gimnasio.jpg}" alt="Instalaciones de gimnasio totalmente equipadas." loading="lazy" id="carousel-img-4" />
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Descripción larga -->
-        <section class="py-5">
-            <div class="container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-        </section>
-
-        <!-- Sección de Hoteles -->
-        <section class="py-5" id="hoteles-section">
-            <div class="container">
-                <h2 class="text-center mb-4">Nuestros Hoteles</h2>
-                <div class="row">
-                    <!-- Columna 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/600/400?random=4" class="card-img-top" alt="Hotel 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Hotel Paraiso</h5>
-                                <!-- Estrellas -->
-                                <div class="d-flex">
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
-                                </div>
-                                <p class="card-text">Paraiso montaña | Gran ubicación.</p>
-                                <p class="card-text"><strong>Desde 50€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel1Modal">Ver más</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/600/400?random=5" class="card-img-top" alt="Hotel 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Hotel Vista Azul</h5>
-                                <!-- Estrellas -->
-                                <div class="d-flex">
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
-                                </div>
-                                <p class="card-text">Paraíso costero | Relax total.</p>
-                                <p class="card-text"><strong>Desde 75€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel2Modal">Ver más</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/600/400?random=6" class="card-img-top" alt="Hotel 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Hotel Montaña</h5>
-                                <!-- Estrellas -->
-                                <div class="d-flex">
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
-                                </div>
-                                <p class="card-text">Ubicación montañosa | Aventura y relax.</p>
-                                <p class="card-text"><strong>Desde 60€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel3Modal">Ver más</button>
-                            </div>
-                        </div>
-                    </div>
+    <section class="section" id="services-cards-section">
+        <h2 class="visually-hidden">Nuestros Servicios Detallados</h2>
+        <div class="cards-container" id="services-grid">
+            <article class="card" id="card-restaurante" tabindex="0">
+                <img th:src="@{/assets/img/restaurante.jpg}" alt="Imagen del restaurante de Zen Aura" loading="lazy" />
+                <div class="card-content">
+                    <h3>Restaurante Zen Aura</h3>
+                    <p>Deléitate con nuestra gastronomía que fusiona productos locales frescos con exquisitas opciones internacionales. ¡Una experiencia culinaria única!</p>
                 </div>
-            </div>
-
-            <!-- Modal Hotel 1 -->
-            <div class="modal fade" id="hotel1Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel1ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Playa a 15 minutos</li>
-                                <li>Piscina climatizada</li>
-                                <li>Clases de surf</li>
-                                <li>Desayuno americano</li>
-                            </ul>
-                            <p><strong>Desde 50€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
+            </article>
+            <article class="card" id="card-transfer" tabindex="0">
+                <img th:src="@{/assets/img/transfer.jpg}" alt="Vehículo de transfer al aeropuerto" loading="lazy" />
+                <div class="card-content">
+                    <h3>Transfer Aeropuerto El Prat</h3>
+                    <p>Facilitamos tu llegada y partida con nuestro servicio de transporte gratuito y cómodo entre el hotel y el aeropuerto de El Prat.</p>
                 </div>
-            </div>
-
-            <!-- Modal Hotel 2 -->
-            <div class="modal fade" id="hotel2Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel2ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Senderismo</li>
-                                <li>Equitación</li>
-                                <li>Actividades de senderismo</li>
-                                <li>Cena Inglesa</li>
-                            </ul>
-                            <p><strong>Desde 70€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
+            </article>
+            <article class="card" id="card-piscina" tabindex="0">
+                <img th:src="@{/assets/img/piscina.jpg}" alt="Piscina interior del hotel" loading="lazy" />
+                <div class="card-content">
+                    <h3>Piscina Interior Climatizada</h3>
+                    <p>Sumérgete en nuestra piscina climatizada, disponible todo el año. Un oasis de tranquilidad con un área de solárium para tu disfrute.</p>
                 </div>
-            </div>
-
-            <!-- Modal Hotel 3 -->
-            <div class="modal fade" id="hotel3Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel3ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Internet de la NASA</li>
-                                <li>Piscina abierta</li>
-                                <li>Clases de vuelo</li>
-                                <li>Merienda noruega</li>
-                            </ul>
-                            <p><strong>Desde 80€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
+            </article>
+            <article class="card" id="card-gym-wellness" tabindex="0">
+                <img th:src="@{/assets/img/gimnasio.jpg}" alt="Persona ejercitándose en el gimnasio" loading="lazy" />
+                <div class="card-content">
+                    <h3>Gimnasio y Wellness</h3>
+                    <p>Mantente activo en nuestra área fitness totalmente equipada o relájate con nuestros servicios de bienestar y masajes, bajo previa reserva.</p>
                 </div>
-            </div>
-
-        </section>
-
-
-        <!-- Sección Carrusel de Ubicaciones -->
-        <section class="py-5">
-            <div class="container text-center">
-                <h2>Ubicaciones de nuestros Hoteles</h2>
-                <div id="locationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.416775,-3.703790&zoom=14&size=600x400&markers=color:red%7C40.416775,-3.703790&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel A" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel A</h5>
-                                <p>Ubicado en Madrid, España</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=48.856613,2.352222&zoom=14&size=600x400&markers=color:red%7C48.856613,2.352222&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel B" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel B</h5>
-                                <p>Ubicado en París, Francia</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=34.052235,-118.243683&zoom=14&size=600x400&markers=color:red%7C34.052235,-118.243683&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel C" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel C</h5>
-                                <p>Ubicado en Los Angeles, EE.UU.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#locationCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#locationCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
+            </article>
+        </div>
+    </section>
 </main>
-</body>
 
+<footer class="mt-5 pt-4 pb-3 rounded">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-4 mb-md-0 mt-2">
+                <h5>Contacto</h5>
+                <p class="mb-1">Calle Ejemplo 123</p>
+                <p class="mb-1">+34 600 123 456</p>
+                <p class="mb-0">contacto@hotel.com</p>
+            </div>
+            <div class="col-md-4 text-md-center mb-4 mb-md-0 mt-2">
+                <p class="mb-2">© 2025 Todos los derechos reservados</p>
+                <p class="mb-2">Síguenos en:</p>
+                <div>
+                    <a href="#" class="me-3"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="me-3"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class=""><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end mt-2">
+                <h5>Conoce más sobre nosotros</h5>
+                <p class="mb-1"><i class="fa-brands fa-linkedin"></i> Natalia García Rodríguez</p>
+                <p class="mb-1"><i class="fa-brands fa-linkedin"></i> Jose Antonio Rodríguez Martín</p>
+                <p class="mb-1"><i class="fa-brands fa-linkedin"></i> Lucía Beltrán Infante</p>
+                <p class="mb-1"><i class="fa-brands fa-linkedin"></i> Álvaro Fernández Sevilla</p>
+                <p class="mb-0"><i class="fa-brands fa-linkedin"></i> Alba Gutiérrez García</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button id="btnSubir" class="btn btn-primary" title="Volver arriba">↑</button>
+
+<script>
+    window.onscroll = function() {
+        const btn = document.getElementById("btnSubir");
+        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+    };
+
+    document.getElementById("btnSubir").addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const carouselImages = document.getElementById('carousel-images');
+    let currentIndex = 0;
+    const totalImages = document.querySelectorAll('#carousel-images img').length;
+
+    function updateCarousel() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    let carouselInterval = setInterval(updateCarousel, 4000);
+
+    const carouselContainer = document.getElementById('main-carousel');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        carouselContainer.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(updateCarousel, 4000);
+        });
+    }
+</script>
+</body>
 </html>
