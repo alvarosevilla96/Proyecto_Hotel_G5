@@ -3,16 +3,10 @@
   box-sizing: border-box;
 }
 
-body, .offcanvas {
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  color: #E0E0E0;
-}
 body {
   background-color: #000000 !important;
-}
-
-.offcanvas {
-  background-color: rgba(0, 0, 0, 0.8);
+  color: #E0E0E0 !important;
+  font-family: 'Atkinson Hyperlegible', sans-serif !important; /* Aplica la fuente correctamente */
 }
 
 header {
@@ -257,13 +251,16 @@ header {
   margin-top: 50px;
 }
 .modal-header .modal-title {
-  color: #E0E0E0;
+  color: #00BFFF;
 }
 .modal-body{
-  background-color: #FFFFFF;
-  color: black;
-
+  background-color: #000000;
+  color: white;
 }
+.modal-header {
+  background-color: #000000;
+}
+
 
 #disponibilidadModal .btn-close {
   filter: invert(1);
