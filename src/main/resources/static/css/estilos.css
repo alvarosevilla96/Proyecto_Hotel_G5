@@ -3,10 +3,16 @@
   box-sizing: border-box;
 }
 
+body, .offcanvas {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  color: #E0E0E0;
+}
 body {
   background-color: #000000 !important;
-  color: #E0E0E0 !important;
-  font-family: 'Atkinson Hyperlegible', sans-serif !important; /* Aplica la fuente correctamente */
+}
+
+.offcanvas {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 header {
