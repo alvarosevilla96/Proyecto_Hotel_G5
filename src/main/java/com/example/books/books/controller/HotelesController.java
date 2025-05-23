@@ -17,11 +17,6 @@ public class HotelesController {
         return "home";
     }
 
-    @GetMapping("/reserva")
-    public String reserva( ){
-        return "reservaCompleta";
-    }
-
     @GetMapping("/servicios")
     public String vistaservicios( ){
         return "services";
@@ -81,6 +76,22 @@ public class HotelesController {
     public String postMostrarPaginaContact(@ModelAttribute(name="datoscontacto") ContactDto infoContacto) {
         System.out.println(infoContacto.getNombre());
         System.out.println(infoContacto.getMensaje());
+        return "home";
+    }
+
+    @GetMapping("/reserva")
+    public String reserva( ModelMap ModelReserva) {
+        ReservaDto reserva= new ReservaDto();
+        reserva.setAdultos(4);
+        ModelReserva.addAttribute("datosreserva", reserva);
+        return "reservaCompleta";
+    }
+
+    @PostMapping("/reserva")
+    public String postReserva(@ModelAttribute(name="datosreserva") ReservaDto reserva) {
+        System.out.println(reserva.getAdultos());
+        System.out.println(reserva.getFechaEntrada());
+        System.out.println(reserva.getFechaSalida());
         return "home";
     }
 
