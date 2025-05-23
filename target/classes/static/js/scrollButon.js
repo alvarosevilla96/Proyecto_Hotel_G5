@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
     // ===== Validación de Contraseña en Registro =====
+    /*
     const form = document.getElementById('registroForm');
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault(); // Previene envío real del formulario
 
             const password = document.getElementById('password').value;
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.reset();
             }
         });
-    }
+    }*/
 
 
     // ===== Validación de Login Simulado =====
