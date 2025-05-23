@@ -72,13 +72,13 @@
             <div class="container">
                 <h2 class="text-center mb-4">Nuestros Hoteles</h2>
                 <div class="row">
-                    <!-- Columna 1 -->
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4" th:each="hotel : ${hotels}">
                         <div class="card">
-                            <img src="https://picsum.photos/600/400?random=4" class="card-img-top" alt="Hotel 1">
+                            <img th:src="${hotel.imgUrl}" class="card-img-top" alt="Imagen hotel">
                             <div class="card-body">
-                                <h5 class="card-title">Hotel Paraiso</h5>
-                                <!-- Estrellas -->
+                                <h5 class="card-title" th:text="${hotel.name}">Nombre Hotel</h5>
+
+                                <!-- Estrellas (placeholder estático) -->
                                 <div class="d-flex">
                                     <span class="text-warning">&#9733;</span>
                                     <span class="text-warning">&#9733;</span>
@@ -86,138 +86,53 @@
                                     <span class="text-warning">&#9733;</span>
                                     <span class="text-muted">&#9733;</span>
                                 </div>
-                                <p class="card-text">Paraiso montaña | Gran ubicación.</p>
-                                <p class="card-text"><strong>Desde 50€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel1Modal">Ver más</button>
+
+                                <p class="card-text" th:text="${hotel.description}">Descripción hotel</p>
+                                <p class="card-text"><strong th:text="'Desde ' + ${hotel.price} + '€ noche'">Precio</strong></p>
+                                <button class="btn btn-primary"
+                                        th:attr="data-bs-target='#hotelModal__' + ${hotel.name.hashCode()}"
+                                        data-bs-toggle="modal">
+                                    Ver más
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Columna 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/600/400?random=5" class="card-img-top" alt="Hotel 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Hotel Vista Azul</h5>
-                                <!-- Estrellas -->
-                                <div class="d-flex">
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
+                <!-- Modales dinámicos -->
+                <div th:each="hotel : ${hotels}">
+                    <div class="modal fade"
+                         th:id="'hotelModal__' + ${hotel.name.hashCode()}"
+                         tabindex="-1"
+                         th:attr="aria-labelledby='hotelModalLabel__' + ${hotel.name.hashCode()}"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content bg-dark text-white">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title"
+                                        th:id="'hotelModalLabel__' + ${hotel.name.hashCode()}"
+                                        th:text="${hotel.name}">Nombre Hotel</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                                 </div>
-                                <p class="card-text">Paraíso costero | Relax total.</p>
-                                <p class="card-text"><strong>Desde 75€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel2Modal">Ver más</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/600/400?random=6" class="card-img-top" alt="Hotel 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Hotel Montaña</h5>
-                                <!-- Estrellas -->
-                                <div class="d-flex">
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-warning">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
-                                    <span class="text-muted">&#9733;</span>
+                                <div class="modal-body">
+                                    <img class="img-fluid mb-3"
+                                         th:src="${hotel.imgUrl}"
+                                         th:alt="${hotel.name}">
+                                    <p th:text="${hotel.bigDescription}">Descripción larga del hotel</p>
+                                    <ul>
+                                        <li th:each="service : ${hotel.services}" th:text="${service}">Servicio</li>
+                                    </ul>
+                                    <p><strong th:text="'Desde ' + ${hotel.price} + '€ por noche'">Precio</strong></p>
                                 </div>
-                                <p class="card-text">Ubicación montañosa | Aventura y relax.</p>
-                                <p class="card-text"><strong>Desde 60€ noche</strong></p>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hotel3Modal">Ver más</button>
+                                <div class="modal-footer border-0">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Reservar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Modal Hotel 1 -->
-            <div class="modal fade" id="hotel1Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel1ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Playa a 15 minutos</li>
-                                <li>Piscina climatizada</li>
-                                <li>Clases de surf</li>
-                                <li>Desayuno americano</li>
-                            </ul>
-                            <p><strong>Desde 50€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
                 </div>
-            </div>
-
-            <!-- Modal Hotel 2 -->
-            <div class="modal fade" id="hotel2Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel2ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Senderismo</li>
-                                <li>Equitación</li>
-                                <li>Actividades de senderismo</li>
-                                <li>Cena Inglesa</li>
-                            </ul>
-                            <p><strong>Desde 70€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal Hotel 3 -->
-            <div class="modal fade" id="hotel3Modal" tabindex="-1" aria-labelledby="hotel1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-dark text-white">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="hotel3ModalLabel">Hotel Paraiso</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://picsum.photos/900/500?random=4" class="img-fluid mb-3" alt="Hotel Paraiso">
-                            <p>Este hotel se encuentra en una ubicación montañosa ideal para quienes buscan tranquilidad, aire puro y actividades al aire libre.</p>
-                            <ul>
-                                <li>Internet de la NASA</li>
-                                <li>Piscina abierta</li>
-                                <li>Clases de vuelo</li>
-                                <li>Merienda noruega</li>
-                            </ul>
-                            <p><strong>Desde 80€ por noche</strong></p>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Reservar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
 
@@ -225,7 +140,7 @@
         <section class="py-5">
             <div class="container text-center">
                 <h2>Ubicaciones de nuestros Hoteles</h2>
-                <div id="locationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div id="locationCarousel" th:each="hotel : ${hotels}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
