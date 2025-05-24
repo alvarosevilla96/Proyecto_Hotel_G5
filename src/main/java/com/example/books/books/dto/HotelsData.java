@@ -16,6 +16,7 @@ public class HotelsData {
                 89.99,
                 "Hotel 1 es una de las mejores opciones para disfrutar de una estancia en Barcelona.",
                 "https://picsum.photos/600/400?random=5",
+
                 List.of("Montañas pequeñas", "Escalada divertida", "Helicoptero privado"),
                 "#"
         ));
@@ -27,8 +28,10 @@ public class HotelsData {
                 99.99,
                 "Hotel La playa de tu vecina es una gran opcion playera.",
                 "https://picsum.photos/600/400?random=2",
+
                 List.of("Playa a 15 minutos", "Piscina monstruosa", "Barco propio"),
                 "#"
+
         ));
 
         list.add(new HotelDto(
@@ -38,8 +41,10 @@ public class HotelsData {
                 30,
                 "Hotel de la ciudad es una de las mejores opciones para disfrutar de una estancia en Sevilla.",
                 "https://picsum.photos/600/400?random=7",
+
                 List.of("No tenemos playa", "No tenemos piscina", "Tenemos un estanco cerca"),
                 "#"
+
         ));
 
         return list;

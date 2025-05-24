@@ -41,7 +41,8 @@ public class HotelesController {
         return "user_home_page";
     }
 
-    @GetMapping("/crear-cuenta")
+
+    @GetMapping("/crear_cuenta")
     public String mostrarCrearCuenta(Model model ){
         UserDto userDto = new UserDto();
         model.addAttribute("userData", userDto);

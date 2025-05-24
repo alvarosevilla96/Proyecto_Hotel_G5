@@ -15,6 +15,7 @@ public class HotelDto {
     private String bigDescription;
     private String imgUrl;
     private List<String> services;
+
     private String mapsURL;
 
     public HotelDto(String name, String location, String description, double price, String bigDescription, String imgUrl, List<String> services, String mapsURL) {
@@ -26,6 +27,7 @@ public class HotelDto {
         this.imgUrl = imgUrl;
         this.services = services;
         this.mapsURL = mapsURL;
+
     }
 
     @Override
