@@ -16,7 +16,9 @@ public class HotelDto {
     private String imgUrl;
     private List<String> services;
 
-    public HotelDto(String name, String location, String description, double price, String bigDescription, String imgUrl, List<String> services) {
+    private String mapsURL;
+
+    public HotelDto(String name, String location, String description, double price, String bigDescription, String imgUrl, List<String> services, String mapsURL) {
         this.name = name;
         this.location = location;
         this.description = description;
@@ -24,6 +26,8 @@ public class HotelDto {
         this.bigDescription = bigDescription;
         this.imgUrl = imgUrl;
         this.services = services;
+        this.mapsURL = mapsURL;
+
     }
 
     @Override
@@ -36,6 +40,7 @@ public class HotelDto {
                 ", bigDescription='" + bigDescription + '\'' +
                 ", imgUrl='" + imgUrl + '\'' +
                 ", services=" + services +
+                ", mapsURL='" + mapsURL + '\'' +
                 '}';
     }
 }
