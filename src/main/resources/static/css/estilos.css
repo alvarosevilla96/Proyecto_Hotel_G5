@@ -140,10 +140,11 @@ header {
 }
 
 .btn-grupo5{
-  --bs-btn-color: #00BFFF;
+  --bs-btn-color: white;
+  --bs-btn-bg: #00BFFF;
   --bs-btn-border-color: #00BFFF;
-  --bs-btn-hover-bg: #00BFFF;
-  --bs-btn-hover-border-color: #00BFFF;
+  --bs-btn-hover-bg: #009ACD;
+  --bs-btn-hover-border-color: #009ACD;
   --bs-btn-hover-color: white;
 }
 
