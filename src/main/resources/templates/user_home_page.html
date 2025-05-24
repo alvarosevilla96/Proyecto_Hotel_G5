@@ -12,13 +12,13 @@
 <section class="text-center mb-5">
     <h1 class="display-4 fw-bold">¡Bienvenido!</h1>
     <p class="lead">Disfruta de una experiencia única en el Zen Aura</p>
-    <button class="btn btn-outline-custom mt-3" data-bs-toggle="modal" data-bs-target="#disponibilidadModal">
+    <button class="btn btn-grupo5 mt-3" data-bs-toggle="modal" data-bs-target="#disponibilidadModal">
         BUSCAR DISPONIBILIDAD
     </button>
 </section>
 <div class="modal fade" id="disponibilidadModal" tabindex="-1" aria-labelledby="disponibilidadModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content text-dark">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="disponibilidadModalLabel">Buscar Disponibilidad</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -27,25 +27,25 @@
                 <form>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="entrada" class="form-label" style="color:black">Fecha de entrada</label>
+                            <label for="entrada" class="form-label" >Fecha de entrada</label>
                             <input type="date" class="form-control" id="entrada" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="salida" class="form-label" style="color:black">Fecha de salida</label>
+                            <label for="salida" class="form-label" >Fecha de salida</label>
                             <input type="date" class="form-control" id="salida" required>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="adultos" class="form-label" style="color:black">Adultos</label>
+                            <label for="adultos" class="form-label" >Adultos</label>
                             <input type="number" class="form-control" id="adultos" min="1" value="1" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="ninos" class="form-label" style="color:black">Niños</label>
+                            <label for="ninos" class="form-label">Niños</label>
                             <input type="number" class="form-control" id="ninos" min="0" value="0">
                         </div>
 
                         <div class="col-md-6">
-                            <label for="hotel" class="form-label" style="color:black">Hotel</label>
+                            <label for="hotel" class="form-label" >Hotel</label>
                             <select class="form-select" id="hotel">
                                 <option>Hotel 1</option>
                                 <option>Hotel 2</option>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="habitacion" class="form-label" style="color:black">Tipo de habitación</label>
+                            <label for="habitacion" class="form-label" >Tipo de habitación</label>
                             <select class="form-select" id="habitacion">
                                 <option>Estandar</option>
                                 <option>Deluxe</option>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="text-end mt-4">
-                        <button type="submit" class="btn btn-outline-custom">Buscar</button>
+                        <button type="submit" class="btn btn-outline-grupo5">Buscar</button>
                     </div>
                 </form>
             </div>

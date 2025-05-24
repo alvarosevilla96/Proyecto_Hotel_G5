@@ -251,13 +251,16 @@ header {
   margin-top: 50px;
 }
 .modal-header .modal-title {
-  color: #E0E0E0;
+  color: #00BFFF;
 }
 .modal-body{
-  background-color: #FFFFFF;
-  color: black;
-
+  background-color: #000000;
+  color: white;
 }
+.modal-header {
+  background-color: #000000;
+}
+
 
 #disponibilidadModal .btn-close {
   filter: invert(1);

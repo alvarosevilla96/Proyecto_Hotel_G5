@@ -139,6 +139,22 @@ header {
   color: white;
 }
 
+.btn-grupo5{
+  --bs-btn-color: #00BFFF;
+  --bs-btn-border-color: #00BFFF;
+  --bs-btn-hover-bg: #018dba;
+  --bs-btn-hover-border-color: #018dba;
+  --bs-btn-hover-color: white;
+}
+
+.btn-outline-grupo5{
+  --bs-btn-color: #00BFFF;
+  --bs-btn-border-color: #00BFFF;
+  --bs-btn-hover-bg: #00BFFF;
+  --bs-btn-hover-border-color: #00BFFF;
+  --bs-btn-hover-color: white;
+}
+
 .btn-outline-secondary:hover{
   background-color: #00BFFF;
   color: white;
@@ -235,13 +251,16 @@ header {
   margin-top: 50px;
 }
 .modal-header .modal-title {
-  color: #E0E0E0;
+  color: #00BFFF;
 }
 .modal-body{
-  background-color: #FFFFFF;
-  color: black;
-
+  background-color: #000000;
+  color: white;
 }
+.modal-header {
+  background-color: #000000;
+}
+
 
 #disponibilidadModal .btn-close {
   filter: invert(1);
@@ -254,13 +273,18 @@ header {
 }
 
 /* Tipografías */
+h1,h2{
+  color: #00BFFF;
+  font-weight: 800;
+}
+
 h3, h4 {
   color: #E0E0E0;
-  font-weight: 700;
+  font-weight: 600;
 }
 h5 {
-  color: #E0E0E0;
-  font-weight: 700;
+  color:#00BFFF;
+  font-weight: 500;
 }
 h6 {
   color: white;
