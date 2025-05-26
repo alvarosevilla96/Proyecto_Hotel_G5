@@ -137,58 +137,40 @@
 
 
         <!-- Sección Carrusel de Ubicaciones -->
-        <section class="py-5">
-            <div class="container text-center">
-                <h2>Ubicaciones de nuestros Hoteles</h2>
-                <div id="locationCarousel" th:each="hotel : ${hotels}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.416775,-3.703790&zoom=14&size=600x400&markers=color:red%7C40.416775,-3.703790&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel A" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel A</h5>
-                                <p>Ubicado en Madrid, España</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=48.856613,2.352222&zoom=14&size=600x400&markers=color:red%7C48.856613,2.352222&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel B" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel B</h5>
-                                <p>Ubicado en París, Francia</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <!-- Imagen estática de Google Maps -->
-                            <div class="map-container">
-                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=34.052235,-118.243683&zoom=14&size=600x400&markers=color:red%7C34.052235,-118.243683&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI" alt="Ubicación Hotel C" width="100%" height="500">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Hotel C</h5>
-                                <p>Ubicado en Los Angeles, EE.UU.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#locationCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#locationCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
+    <!-- Contenedor del carrusel con ancho del 60% centrado -->
+    <div class="d-flex justify-content-center">
+        <div style="width: 70%;" class="rounded-4 shadow-lg overflow-hidden">
+            <div id="locationCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#locationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item" th:each="hotel, iter : ${hotels}" th:classappend="${iter.index == 0} ? ' active'">
+                        <div class="map-container">
+                            <img th:src="${hotel.mapsURL}" th:alt="'Ubicación de ' + ${hotel.name}" width="100%" height="500">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 th:text="${hotel.name}">Nombre Hotel</h5>
+                            <p th:text="${hotel.location}">Ubicación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#locationCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#locationCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
-        </section>
+        </div>
+    </div>
+
+
 
 </main>
 </body>
