@@ -247,17 +247,18 @@ h6 {
 
 /* Acordeón */
 .accordion-button {
-  background-color: white;
-  color: #000000;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
+
 .accordion-button:not(.collapsed) {
-  background-color: #00BFFF;
-  color: white;
+  background-color: #000000;
+  color: #00BFFF
 }
+
 .accordion-body {
-  background-color: white;
-  color: #000000;
-  font-size: 14px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 
 /* Footer y iconos */
