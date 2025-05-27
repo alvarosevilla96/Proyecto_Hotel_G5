@@ -179,6 +179,7 @@ body {
 .card {
   background-color: white;
   border: 1px solid #ddd;
+  color: #000000;
 }
 .card-title {
   color: #00BFFF;
@@ -186,15 +187,6 @@ body {
 }
 .card-text {
   color: black;
-}
-.card .btn {
-  background-color: #000000;
-  color: white;
-  border: none;
-}
-.card .btn:hover {
-  background-color: #00BFFF;
-  color: white;
 }
 
 /* Modales */
