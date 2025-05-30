@@ -44,7 +44,7 @@ public class HotelesController {
     }
 
 
-    @GetMapping("/crear_cuenta")
+    @GetMapping("/crearCuenta")
     public String mostrarCrearCuenta(Model model ){
         UserDto userDto = new UserDto();
         model.addAttribute("userData", userDto);
@@ -58,7 +58,7 @@ public class HotelesController {
         this.emailService = emailService;
     }
 
-    @PostMapping("/crear-cuenta")
+    @PostMapping("/crearCuenta")
     public String postCrearCuenta(@ModelAttribute(name = "userData") UserDto user){
         System.out.println(user.getName());
         System.out.println(user.getEmail());
@@ -66,9 +66,11 @@ public class HotelesController {
 
         emailService.sendEmail(
                 "jrmar0805@gmail.com",
-                "jarmar0805@gmail.com",
+                "Test enviar correo",
                 "Lets test the email sender" + user.getEmail()
         );
+
+        System.out.println("email sent");
 
         return "home";
     }

@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 <div class="card shadow-lg p-4" style="background-color: #E0E0E0;">
                     <h2 class="text-center mb-4">CREAR CUENTA</h2>
-                    <form id="registroForm" th:action="@{/crear-cuenta}" th:object="${userData}" method="post">
+                    <form id="registroForm" th:action="@{/crearCuenta}" th:object="${userData}" method="post">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">NOMBRE</label>
                             <input th:field="${userData.name}" type="text" class="form-control" id="nombre" required>
