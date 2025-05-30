@@ -1,6 +1,8 @@
 package com.example.books.books.controller;
 
 import com.example.books.books.dto.*;
+import com.example.books.books.services.EmailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -10,8 +12,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+
 @Controller
 public class HotelesController {
+
+
+    private final EmailService emailService;
+
+    @Autowired
+    public HotelesController(EmailService emailService)  {
+        this.emailService = emailService;
+    }
     @GetMapping("/")
     public String vistaHome( ModelMap interfazConPantalla){
         return "home";
@@ -73,16 +84,23 @@ public class HotelesController {
     @GetMapping("/contact")
     public String mostrarPaginaContact(ModelMap intefrazConPantalla) {
         ContactDto contacto = new ContactDto();
-        contacto.setNombre("El lobo feroz");
+        contacto.setName("El lobo feroz");
         intefrazConPantalla.addAttribute("datoscontacto", contacto);
         return "contact";
     }
 
     @PostMapping("/contact")
     public String postMostrarPaginaContact(@ModelAttribute(name="datoscontacto") ContactDto infoContacto) {
-        System.out.println(infoContacto.getNombre());
-        System.out.println(infoContacto.getMensaje());
+        System.out.println(infoContacto.getName());
+        System.out.println(infoContacto.getMessage());
+
+        emailService.sendEmail(
+                "alba2gr@gmail.com",
+                "Correo de prueba1",
+                "Lets test the email sender" + infoContacto.getName() + infoContacto.getEmail() +  infoContacto.getPhoneNumber() + infoContacto.getMessage()
+        );
         return "home";
+
     }
 
 
