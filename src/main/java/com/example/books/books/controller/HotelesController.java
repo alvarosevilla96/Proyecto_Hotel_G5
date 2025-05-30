@@ -96,11 +96,15 @@ public class HotelesController {
 
         emailService.sendEmail(
                 "alba2gr@gmail.com",
-                "Correo de prueba1",
-                "Lets test the email sender" + infoContacto.getName() + infoContacto.getEmail() +  infoContacto.getPhoneNumber() + infoContacto.getMessage()
+                "Correo de prueba",
+                "Este es un mensaje de prueba.\n\n" +
+                        "Nombre: " + infoContacto.getName() + "\n" +
+                        "Email: " + infoContacto.getEmail() + "\n" +
+                        "Teléfono: " + infoContacto.getPhoneNumber() + "\n" +
+                        "Departamento " + infoContacto.getDepartment() + "\n" +
+                        "Mensaje: " + infoContacto.getMessage()
         );
         return "home";
-
     }
 
 

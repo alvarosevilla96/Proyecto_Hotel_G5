@@ -31,7 +31,7 @@
             <div class="row mb-4">
               <div class="col-md-6 mb-3 mb-md-0">
                 <label for="nombre" class="form-label">Nombre *</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" th:field="${datoscontacto.nombre}" placeholder="Tu nombre completo" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" th:field="${datoscontacto.name}" placeholder="Tu nombre completo" required>
               </div>
 
               <div class="col-md-6">
@@ -50,7 +50,7 @@
 
             <div class="mb-4">
               <label for="departamento" class="form-label">Departamento *</label>
-              <select class="form-select" id="departamento" name="departamento" required aria-required="true">
+              <select class="form-select" id="departamento" name="departamento"  th:field="${datoscontacto.department}" aria-required="true">
                 <option value="" disabled selected>Seleccione una opción</option>
                 <option value="habitacion">Habitación</option>
                 <option value="reserva">Reserva</option>
@@ -70,7 +70,7 @@
 
             <div class="mb-4">
               <label for="mensaje" class="form-label">Mensaje *</label>
-              <textarea class="form-control" id="mensaje" name="mensaje" th:field="${datoscontacto.mensaje}" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              <textarea class="form-control" id="mensaje" name="mensaje" th:field="${datoscontacto.message}" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
 
             <div class="text-center">
