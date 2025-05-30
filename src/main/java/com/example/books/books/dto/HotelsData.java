@@ -16,7 +16,9 @@ public class HotelsData {
                 89.99,
                 "Hotel 1 es una de las mejores opciones para disfrutar de una estancia en Barcelona.",
                 "https://picsum.photos/600/400?random=5",
-                List.of("Montañas pequeñas", "Escalada divertida", "Helicoptero privado")
+
+                List.of("Montañas pequeñas", "Escalada divertida", "Helicoptero privado"),
+                "https://maps.googleapis.com/maps/api/staticmap?center=40.416775,-3.703790&zoom=14&size=600x400&markers=color:red%7C40.416775,-3.703790&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI"
         ));
 
         list.add(new HotelDto(
@@ -26,7 +28,10 @@ public class HotelsData {
                 99.99,
                 "Hotel La playa de tu vecina es una gran opcion playera.",
                 "https://picsum.photos/600/400?random=2",
-                List.of("Playa a 15 minutos", "Piscina monstruosa", "Barco propio")
+
+                List.of("Playa a 15 minutos", "Piscina monstruosa", "Barco propio"),
+                "https://maps.googleapis.com/maps/api/staticmap?center=48.856613,2.352222&zoom=14&size=600x400&markers=color:red%7C48.856613,2.352222&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI"
+
         ));
 
         list.add(new HotelDto(
@@ -36,7 +41,10 @@ public class HotelsData {
                 30,
                 "Hotel de la ciudad es una de las mejores opciones para disfrutar de una estancia en Sevilla.",
                 "https://picsum.photos/600/400?random=7",
-                List.of("No tenemos playa", "No tenemos piscina", "Tenemos un estanco cerca")
+
+                List.of("No tenemos playa", "No tenemos piscina", "Tenemos un estanco cerca"),
+                "https://maps.googleapis.com/maps/api/staticmap?center=34.052235,-118.243683&zoom=14&size=600x400&markers=color:red%7C34.052235,-118.243683&key=AIzaSyCVai7Nwhhyg1XZVYa5ErxR_iRF0gzafGI"
+
         ));
 
         return list;
