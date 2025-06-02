@@ -66,8 +66,9 @@ public class HotelesController {
 
         emailService.sendEmail(
                 "jrmar0805@gmail.com",
-                "Test enviar correo",
-                "Lets test the email sender" + user.getEmail()
+                user.getEmail(),
+                "Creacion de cuenta en Tresora",
+                "Has creado tu cuenta con exito, estas son tus credenciales de usuario" + user.getEmail() + user.getPassword()
         );
 
         System.out.println("email sent");

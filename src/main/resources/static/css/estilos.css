@@ -190,6 +190,10 @@ body {
 }
 
 /* Modales */
+.modal-content,
+.modal-content * {
+  color: white !important;
+}
 .modal-content {
   background-color: #000000;
   color: white;

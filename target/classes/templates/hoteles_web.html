@@ -3,9 +3,11 @@
       layout:decorate="~{/layout/plantilla}" lang="es">
 <head>
     <title>Hoteles Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link th:href="@{/css/carousel_custom.css}" rel="stylesheet" />
     <link th:href="@{/css/hoteles_cards.css}" rel="stylesheet" />
+    <link th:href="@{/css/aboutUs.css}" rel="stylesheet" />
 </head>
 
 <body class="bg-gradient-primary">
@@ -67,7 +69,66 @@
             </div>
         </section>
 
-        <!-- Sección de Hoteles -->
+    <!-- Sobre nosotros -->
+
+    <section class="py-5 text-center">
+        <div class="container">
+            <h1 class="display-4">Sobre nosotros</h1>
+            <p class="lead">Conoce al equipo detrás de la web.</p>
+        </div>
+    </section>
+
+    <section class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Miembro 1 -->
+            <div class="swiper-slide">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Gómez">
+                <h5>Carlos Gómez</h5>
+                <p>CEO y fundador. Apasionado por la innovación hotelera.</p>
+                <ul class="social-links">
+                    <li><a href="https://linkedin.com/in/usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://twitter.com/usuario" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <!-- Puedes añadir más enlaces -->
+                </ul>
+
+            </div>
+            <!-- Miembro 2 -->
+            <div class="swiper-slide">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Laura Pérez">
+                <h5>Laura Pérez</h5>
+                <p>Directora de marketing. Creativa, empática y visionaria.</p>
+            </div>
+            <!-- Miembro 3 -->
+            <div class="swiper-slide">
+                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Andrés Rivera">
+                <h5>Andrés Rivera</h5>
+                <p>CTO. Arquitecto de soluciones modernas y escalables.</p>
+            </div>
+            <!-- Miembro 3 -->
+            <div class="swiper-slide">
+                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Andrés Rivera">
+                <h5>Andrés Rivera</h5>
+                <p>CTO. Arquitecto de soluciones modernas y escalables.</p>
+            </div>
+            <!-- Miembro 3 -->
+            <div class="swiper-slide">
+                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Andrés Rivera">
+                <h5>Andrés Rivera</h5>
+                <p>CTO. Arquitecto de soluciones modernas y escalables.</p>
+            </div>
+            <!-- Puedes añadir hasta 5 miembros aquí -->
+        </div>
+
+        <!-- Controles -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script th:src="@{/js/swiper.js}"></script>
+
+    <!-- Sección de Hoteles -->
         <section class="py-5" id="hoteles-section">
             <div class="container">
                 <h2 class="text-center mb-4">Nuestros Hoteles</h2>
@@ -89,7 +150,7 @@
 
                                 <p class="card-text" th:text="${hotel.description}">Descripción hotel</p>
                                 <p class="card-text"><strong th:text="'Desde ' + ${hotel.price} + '€ noche'">Precio</strong></p>
-                                <button class="btn btn-primary"
+                                <button class="btn btn-outline-grupo5"
                                         th:attr="data-bs-target='#hotelModal__' + ${hotel.name.hashCode()}"
                                         data-bs-toggle="modal">
                                     Ver más
@@ -107,12 +168,12 @@
                          th:attr="aria-labelledby='hotelModalLabel__' + ${hotel.name.hashCode()}"
                          aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content bg-dark text-white">
+                            <div class="modal-content">
                                 <div class="modal-header border-0">
                                     <h5 class="modal-title"
                                         th:id="'hotelModalLabel__' + ${hotel.name.hashCode()}"
                                         th:text="${hotel.name}">Nombre Hotel</h5>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                    <button type="button" class="btn-close btn-grupo5" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                                 </div>
                                 <div class="modal-body">
                                     <img class="img-fluid mb-3"
@@ -125,14 +186,15 @@
                                     <p><strong th:text="'Desde ' + ${hotel.price} + '€ por noche'">Precio</strong></p>
                                 </div>
                                 <div class="modal-footer border-0">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Reservar</button>
+                                    <button type="button" class="btn btn-grupo5" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-outline-grupo5">Reservar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
+
         </section>
 
 
