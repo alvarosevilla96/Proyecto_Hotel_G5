@@ -1,6 +1,8 @@
 package com.example.books.books.controller;
 
 import com.example.books.books.dto.*;
+import com.example.books.books.services.EmailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -42,18 +44,35 @@ public class HotelesController {
     }
 
 
-    @GetMapping("/crear_cuenta")
+    @GetMapping("/crearCuenta")
     public String mostrarCrearCuenta(Model model ){
         UserDto userDto = new UserDto();
         model.addAttribute("userData", userDto);
         return "crearCuenta";
     }
 
-    @PostMapping("/crear-cuenta")
+    private final EmailService emailService;
+
+    @Autowired
+    public HotelesController(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
+    @PostMapping("/crearCuenta")
     public String postCrearCuenta(@ModelAttribute(name = "userData") UserDto user){
         System.out.println(user.getName());
         System.out.println(user.getEmail());
         System.out.println(user.getPassword());
+
+        emailService.sendEmail(
+                "jrmar0805@gmail.com",
+                user.getEmail(),
+                "Creacion de cuenta en Tresora",
+                "Has creado tu cuenta con exito, estas son tus credenciales de usuario" + user.getEmail() + user.getPassword()
+        );
+
+        System.out.println("email sent");
+
         return "home";
     }
 
