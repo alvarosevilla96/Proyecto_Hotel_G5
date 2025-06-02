@@ -3,11 +3,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #000000 !important;
-  color: #E0E0E0 !important;
-  font-family: 'Atkinson Hyperlegible', sans-serif !important; /* Aplica la fuente correctamente */
-}
 
 header {
   position: relative;
@@ -16,11 +11,19 @@ header {
 }
 
 /* Offcanvas personalizado */
+
+body, .offcanvas {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  color: #E0E0E0;
+}
+body {
+  background-color: #000000 !important;
+}
+
 .offcanvas {
   background-color: rgba(0, 0, 0, 0.8);
-  color: #E0E0E0;
-  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
+
 .offcanvas .offcanvas-title {
   color: #E0E0E0;
 }
@@ -140,63 +143,15 @@ header {
 }
 
 .btn-grupo5{
-  --bs-btn-color: #00BFFF;
+  --bs-btn-color: white;
+  --bs-btn-bg: #00BFFF;
   --bs-btn-border-color: #00BFFF;
-  --bs-btn-hover-bg: #00BFFF;
-  --bs-btn-hover-border-color: #00BFFF;
+  --bs-btn-hover-bg: #009ACD;
+  --bs-btn-hover-border-color: #009ACD;
   --bs-btn-hover-color: white;
 }
 
 .btn-outline-grupo5{
-  --bs-btn-color: #00BFFF;
-  --bs-btn-border-color: #00BFFF;
-  --bs-btn-hover-bg: #00BFFF;
-  --bs-btn-hover-border-color: #00BFFF;
-  --bs-btn-hover-color: white;
-}
-
-.btn-outline-secondary:hover{
-  background-color: #00BFFF;
-  color: white;
-}
-
-.btn-danger {
-  background-color: #000000;
-  color: white;
-  border: none;
-}
-.btn-danger:hover {
-  background-color: #00BFFF;
-  color: white;
-}
-.btn-primary {
-  background-color: #000000;
-  color: white;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: #00BFFF;
-  color: white;
-}
-.btn-outline-success {
-  color: #00BFFF;
-}
-.btn-outline-success:hover {
-  background-color: #00BFFF;
-  color: white;
-}
-.btn-outline-dark {
-  background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
-}
-.btn-outline-dark:hover {
-  background-color: #00BFFF;
-  color: white;
-  border: 1px solid #00BFFF;
-}
-
-.btn-outline-custom {
   --bs-btn-color: #00BFFF;
   --bs-btn-border-color: #00BFFF;
   --bs-btn-hover-bg: #00BFFF;
@@ -224,6 +179,7 @@ header {
 .card {
   background-color: white;
   border: 1px solid #ddd;
+  color: #000000;
 }
 .card-title {
   color: #00BFFF;
@@ -231,15 +187,6 @@ header {
 }
 .card-text {
   color: black;
-}
-.card .btn {
-  background-color: #000000;
-  color: white;
-  border: none;
-}
-.card .btn:hover {
-  background-color: #00BFFF;
-  color: white;
 }
 
 /* Modales */
@@ -260,7 +207,6 @@ header {
 .modal-header {
   background-color: #000000;
 }
-
 
 #disponibilidadModal .btn-close {
   filter: invert(1);
@@ -293,17 +239,18 @@ h6 {
 
 /* Acordeón */
 .accordion-button {
-  background-color: white;
-  color: #000000;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
+
 .accordion-button:not(.collapsed) {
-  background-color: #00BFFF;
-  color: white;
+  background-color: #000000;
+  color: #00BFFF
 }
+
 .accordion-body {
-  background-color: white;
-  color: #000000;
-  font-size: 14px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 
 /* Footer y iconos */
