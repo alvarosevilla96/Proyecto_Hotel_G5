@@ -14,6 +14,3 @@ public class ReservaDto {
     private LocalDate fechaSalida;
     private int Adultos;
 }
-
-
-
