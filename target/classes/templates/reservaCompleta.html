@@ -12,7 +12,7 @@
         <div class="container">
 
             <!-- ----------------------------------------Reserva Express----------------------------------------------------------------------------------------- -->
-            <a th:href="@{/reservaRapida}" target="_blank" class="d-block-text text-center" style="position: fixed; top: 200px; right: 20px; background-color: #00BFFF; padding: 10px; border-radius: 5px; text-decoration: none;">
+            <a th:href="@{/reservarapida}" target="_blank" class="d-block-text text-center" style="position: fixed; top: 200px; right: 20px; background-color: #00BFFF; padding: 10px; border-radius: 5px; text-decoration: none;">
                 <i class="bi bi-cart-dash" style="font-size: 1.5rem; color: #FFFFFF;"></i>
                 <p style="margin: 0; font-size: 0.8rem; color: #FFFFFF; letter-spacing: 2px;">RESERVA EXPRESS</p>
             </a>
@@ -266,7 +266,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-grupo5" data-bs-dismiss="modal">Cancelar</button>
-                            <a id="confirmReservation" href="/reservas/seleccionar" class="btn btn-grupo5">Confirmar Reserva</a>
+                            <a id="confirmReservation" th:href="@{/confirmarReserva}" class="btn btn-grupo5">Confirmar Reserva</a>
                         </div>
                     </div>
                 </div>
