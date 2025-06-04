@@ -19,11 +19,6 @@ public class HotelesController {
         return "home";
     }
 
-    @GetMapping("/reserva")
-    public String reserva( ){
-        return "reservaCompleta";
-    }
-
     @GetMapping("/servicios")
     public String vistaservicios( ){
         return "services";
